@@ -20,6 +20,7 @@
     "storybook": "storybook dev -p 6006",
     "prebuild-storybook": "npm --prefix ../../design-tokens run build",
     "build-storybook": "storybook build -o storybook-static",
+    "postbuild-storybook": "node -e \"require('fs').cpSync('storybook-static','../../storybook-static',{recursive:true,force:true})\"",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
