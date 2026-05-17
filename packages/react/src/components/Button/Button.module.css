@@ -64,10 +64,13 @@
   width: 100%;
 }
 
-/* Foco visível acessível, alinhado com o estilo "On focus" do Figma. */
+/* Foco visível ("On focus" do Figma): anel interno neutro (2px) + anel
+   externo accent/ciano (4px). Igual para todas as 6 hierarquias.
+   Os tokens trocam de valor automaticamente no tema dark. */
 .button:focus-visible {
-  box-shadow: 0 0 0 2px var(--background-default),
-    0 0 0 4px var(--border-primary);
+  box-shadow:
+    0 0 0 2px var(--container-neutral-base-default),
+    0 0 0 4px var(--border-accent);
 }
 
 .button:disabled {
