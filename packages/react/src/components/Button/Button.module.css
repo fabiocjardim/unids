@@ -1,28 +1,70 @@
+/*
+ * Button — uniDS (Banco do Brasil)
+ *
+ * Implementação fiel ao componente do Figma `uniDS - v4.0 > Button`
+ * (https://www.figma.com/design/jyEj9J8wAJyY5OAJAjMFPy/uniDS---v4.0?node-id=12-421).
+ *
+ * Matriz: 6 Hierarchies × 3 Sizes. Os Status (hover, pressed, focus, disabled)
+ * são entregues via pseudo-classes em vez de variantes separadas.
+ *
+ * Observações sobre tokens:
+ *   - `border-radius-pill` (999px) e o stack Titulos vêm direto dos tokens.
+ *   - O hover de Secondary/Tertiary usa `--container-primary-tint`
+ *     (brand-blue.100) porque os tokens `--button-secondary-*` no
+ *     `design-tokens.json` ainda apontam pra brand-yellow (filled secondary,
+ *     padrão antigo) e não pra outline azul. Quando o JSON for ressincronizado
+ *     com o Figma atual, dá pra trocar pelo `--button-secondary-hover`.
+ *   - Paddings hardcoded em px porque a escala `--spacing-*` deste repo
+ *     está deslocada em um step em relação à do Figma (2xs=4 aqui, 8 lá).
+ */
+
 .button {
   /* Reset */
   border: 0;
   margin: 0;
+  background: transparent;
   cursor: pointer;
-  font-family: var(--typography-font-family-textos);
-  font-weight: var(--typography-font-weight-medium);
-  line-height: 1;
   text-decoration: none;
+  font-family: var(--typography-font-family-titulos), 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: var(--typography-font-weight-medium);
+  letter-spacing: var(--typography-letter-spacing-tight);
 
   /* Layout */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-2xs);
+  gap: 4px;
 
   /* Forma */
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-pill);
+  overflow: hidden;
 
-  /* Transição visual entre estados (sem mexer em props que mudam layout). */
+  /* Transição visual entre estados (sem mexer em props de layout). */
   transition: background-color 120ms ease, color 120ms ease,
-    box-shadow 120ms ease;
+    border-color 120ms ease, box-shadow 120ms ease;
   outline: none;
 }
 
+.label {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Foco visível acessível, alinhado com o estilo "On focus" do Figma. */
 .button:focus-visible {
   box-shadow: 0 0 0 2px var(--background-default),
     0 0 0 4px var(--border-primary);
@@ -30,36 +72,67 @@
 
 .button:disabled {
   cursor: not-allowed;
-  color: var(--text-disabled);
 }
 
-.fullWidth {
-  width: 100%;
-}
-
-/* ============ Tamanhos ============ */
+/* ============ Sizes (Figma: Small/Default/Large) ============ */
 
 .size-sm {
-  font-size: var(--typography-font-size-sm);
-  padding: var(--spacing-2xs) var(--spacing-sm);
   min-height: 32px;
+  max-height: 32px;
+  min-width: 40px;
+  padding: 8px 12px;
+  font-size: var(--typography-font-size-xs);     /* 12px */
+  line-height: var(--typography-line-height-16); /* 16px */
+}
+.size-sm.iconOnly {
+  min-width: 32px;
+  max-width: 32px;
+  padding: 0;
+}
+.size-sm .icon {
+  width: 16px;
+  height: 16px;
 }
 
 .size-md {
-  font-size: var(--typography-font-size-base);
-  padding: var(--spacing-xs) var(--spacing-md);
   min-height: 40px;
+  max-height: 40px;
+  min-width: 40px;
+  padding: 12px 16px;
+  font-size: var(--typography-font-size-sm);     /* 14px */
+  line-height: var(--typography-line-height-16); /* 16px */
+}
+.size-md.iconOnly {
+  min-width: 40px;
+  max-width: 40px;
+  padding: 0;
+}
+.size-md .icon {
+  width: 20px;
+  height: 20px;
 }
 
 .size-lg {
-  font-size: var(--typography-font-size-lg);
-  padding: var(--spacing-sm) var(--spacing-lg);
-  min-height: 48px;
+  min-height: 56px;
+  max-height: 56px;
+  min-width: 56px;
+  padding: 16px;
+  font-size: var(--typography-font-size-base);   /* 16px */
+  line-height: var(--typography-line-height-24); /* 24px */
+}
+.size-lg.iconOnly {
+  min-width: 56px;
+  max-width: 56px;
+  padding: 0;
+}
+.size-lg .icon {
+  width: 24px;
+  height: 24px;
 }
 
-/* ============ Variantes ============ */
+/* ============ Hierarchies ============ */
 
-/* Primary — fundo brand-blue, texto invertido (branco) */
+/* --- Primary: fundo azul, texto branco --- */
 .variant-primary {
   background-color: var(--button-primary-default);
   color: var(--text-inverted-default);
@@ -75,68 +148,82 @@
   color: var(--text-disabled);
 }
 
-/* Secondary — fundo brand-yellow, texto padrão (escuro) */
+/* --- Secondary: borda azul, fundo transparente, texto azul --- */
 .variant-secondary {
-  background-color: var(--button-secondary-default);
-  color: var(--text-default);
+  background-color: transparent;
+  color: var(--text-primary);
+  box-shadow: inset 0 0 0 1px var(--border-primary);
 }
 .variant-secondary:hover:not(:disabled) {
-  background-color: var(--button-secondary-hover);
+  background-color: var(--container-primary-tint);
 }
 .variant-secondary:active:not(:disabled) {
-  background-color: var(--button-secondary-pressed);
+  background-color: var(--container-primary-soft);
 }
 .variant-secondary:disabled {
-  background-color: var(--button-secondary-disabled);
-  color: var(--text-disabled);
-}
-
-/* Tertiary — fundo claro/branco, texto padrão, com borda sutil */
-.variant-tertiary {
-  background-color: var(--button-tertiary-default);
-  color: var(--text-default);
-  box-shadow: inset 0 0 0 1px var(--border-muted);
-}
-.variant-tertiary:hover:not(:disabled) {
-  background-color: var(--button-tertiary-hover);
-}
-.variant-tertiary:active:not(:disabled) {
-  background-color: var(--button-tertiary-pressed);
-}
-.variant-tertiary:disabled {
-  background-color: var(--button-tertiary-disabled);
   color: var(--text-disabled);
   box-shadow: inset 0 0 0 1px var(--border-disabled);
 }
 
-/* Critical — fundo red, texto invertido (branco) */
-.variant-critical {
+/* --- Tertiary: só texto azul, sem borda --- */
+.variant-tertiary {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+.variant-tertiary:hover:not(:disabled) {
+  background-color: var(--container-primary-tint);
+}
+.variant-tertiary:active:not(:disabled) {
+  background-color: var(--container-primary-soft);
+}
+.variant-tertiary:disabled {
+  color: var(--text-disabled);
+}
+
+/* --- Critical Primary: fundo vermelho, texto branco --- */
+.variant-critical-primary {
   background-color: var(--button-critical-default);
   color: var(--text-inverted-default);
 }
-.variant-critical:hover:not(:disabled) {
+.variant-critical-primary:hover:not(:disabled) {
   background-color: var(--button-critical-hover);
 }
-.variant-critical:active:not(:disabled) {
+.variant-critical-primary:active:not(:disabled) {
   background-color: var(--button-critical-pressed);
 }
-.variant-critical:disabled {
+.variant-critical-primary:disabled {
   background-color: var(--button-critical-disabled);
   color: var(--text-disabled);
 }
 
-/* Critical secondary — fundo red claro, texto critical (vermelho escuro) */
+/* --- Critical Secondary: borda vermelha, fundo transparente, texto vermelho --- */
 .variant-critical-secondary {
-  background-color: var(--button-critical-secondary-default);
+  background-color: transparent;
   color: var(--text-critical);
+  box-shadow: inset 0 0 0 1px var(--border-critical);
 }
 .variant-critical-secondary:hover:not(:disabled) {
-  background-color: var(--button-critical-secondary-hover);
+  background-color: var(--container-status-critical-tint);
 }
 .variant-critical-secondary:active:not(:disabled) {
-  background-color: var(--button-critical-secondary-pressed);
+  background-color: var(--button-critical-secondary-default);
 }
 .variant-critical-secondary:disabled {
-  background-color: var(--button-critical-secondary-disabled);
+  color: var(--text-disabled);
+  box-shadow: inset 0 0 0 1px var(--border-disabled);
+}
+
+/* --- Critical Tertiary: só texto vermelho --- */
+.variant-critical-tertiary {
+  background-color: transparent;
+  color: var(--text-critical);
+}
+.variant-critical-tertiary:hover:not(:disabled) {
+  background-color: var(--container-status-critical-tint);
+}
+.variant-critical-tertiary:active:not(:disabled) {
+  background-color: var(--button-critical-secondary-default);
+}
+.variant-critical-tertiary:disabled {
   color: var(--text-disabled);
 }

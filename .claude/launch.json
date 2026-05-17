@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "storybook-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "packages/react/storybook-static", "--silent"],
+      "port": 7223
+    }
+  ]
+}
