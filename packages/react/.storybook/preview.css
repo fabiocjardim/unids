@@ -1,0 +1,10 @@
+/* Aplica os tokens semânticos no body do Storybook para que o tema
+   light/dark afete o fundo, não só os componentes. */
+html,
+body,
+#storybook-root {
+  background-color: var(--background-default);
+  color: var(--text-default);
+  font-family: var(--typography-font-family-textos);
+  transition: background-color 120ms ease, color 120ms ease;
+}

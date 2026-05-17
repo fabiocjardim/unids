@@ -1,0 +1,397 @@
+{
+  "_meta": {
+    "name": "uniDS - Banco do Brasil",
+    "version": "1.0.0",
+    "description": "Design tokens planos (valores já resolvidos). Para consumo direto em React/Angular sem Style Dictionary.",
+    "source": "https://www.figma.com/design/aFwjZ4z4swHMj7lhhttaVW/uniDS---Guia-de-Estilos",
+    "exportedAt": "2026-04-24"
+  },
+
+  "color": {
+    "raw": {
+      "white": "#ffffff",
+      "black": "#000000"
+    },
+    "neutral": {
+      "50":  "#fafafa",
+      "100": "#f4f4f5",
+      "200": "#e4e4e7",
+      "300": "#d4d4d8",
+      "400": "#9f9fa9",
+      "500": "#71717b",
+      "600": "#52525c",
+      "700": "#3f3f46",
+      "800": "#27272a",
+      "900": "#18181b",
+      "950": "#09090b"
+    },
+    "brandBlue": {
+      "50":  "#ecf3ff",
+      "100": "#dde9ff",
+      "200": "#c2d6ff",
+      "300": "#9cb9ff",
+      "400": "#7591ff",
+      "500": "#465eff",
+      "600": "#3640f5",
+      "700": "#2a30d8",
+      "800": "#252cae",
+      "900": "#262e89",
+      "950": "#161850"
+    },
+    "brandYellow": {
+      "50":  "#fcfee8",
+      "100": "#fafec3",
+      "200": "#fafe8a",
+      "300": "#fcfc30",
+      "400": "#f9f016",
+      "500": "#e9d709",
+      "600": "#c9a905",
+      "700": "#a07a08",
+      "800": "#85600e",
+      "900": "#714e12",
+      "950": "#422a06"
+    },
+    "blue": {
+      "50":  "#eef9ff",
+      "100": "#d9f1ff",
+      "200": "#bce7ff",
+      "300": "#8ed9ff",
+      "400": "#59c1ff",
+      "500": "#3aa7ff",
+      "600": "#1b85f5",
+      "700": "#146ee1",
+      "800": "#1758b6",
+      "900": "#194b8f",
+      "950": "#142f57"
+    },
+    "cyan": {
+      "50":  "#ecfdff",
+      "100": "#cef7ff",
+      "200": "#a3eefe",
+      "300": "#54dcfc",
+      "400": "#1dc6f3",
+      "500": "#01a9d9",
+      "600": "#0486b6",
+      "700": "#0b6c93",
+      "800": "#135877",
+      "900": "#144965",
+      "950": "#072f45"
+    },
+    "green": {
+      "50":  "#ebffe5",
+      "100": "#d2ffc8",
+      "200": "#a9ff97",
+      "300": "#73fb5b",
+      "400": "#45f229",
+      "500": "#23d80a",
+      "600": "#14aa03",
+      "700": "#128308",
+      "800": "#14670d",
+      "900": "#145710",
+      "950": "#033102"
+    },
+    "amber": {
+      "50":  "#fffaeb",
+      "100": "#fff1c6",
+      "200": "#ffe188",
+      "300": "#ffcb4a",
+      "400": "#ffb31a",
+      "500": "#f99207",
+      "600": "#dd6b02",
+      "700": "#b74a06",
+      "800": "#94380c",
+      "900": "#7a2e0d",
+      "950": "#461602"
+    },
+    "red": {
+      "50":  "#fff1f2",
+      "100": "#ffdfe1",
+      "200": "#ffc5c9",
+      "300": "#ff9da3",
+      "400": "#ff646e",
+      "500": "#ff2e3b",
+      "600": "#ed1522",
+      "700": "#c80d19",
+      "800": "#a50f18",
+      "900": "#88141b",
+      "950": "#4b0408"
+    },
+    "purple": {
+      "50":  "#f4f3ff",
+      "100": "#eae8ff",
+      "200": "#d7d5ff",
+      "300": "#bdb6ff",
+      "400": "#9888fd",
+      "500": "#7758fa",
+      "600": "#6635f2",
+      "700": "#5723de",
+      "800": "#481dba",
+      "900": "#3d1a98",
+      "950": "#230e67"
+    }
+  },
+
+  "semantic": {
+    "light": {
+      "background": {
+        "default":     "#ffffff",
+        "softDefault": "#fafafa",
+        "hardDefault": "#f4f4f5",
+        "hardHover":   "#e4e4e7"
+      },
+      "text": {
+        "default":         "#09090b",
+        "muted":           "#3f3f46",
+        "placeholder":     "#71717b",
+        "disabled":        "#d4d4d8",
+        "primary":         "#3640f5",
+        "secondary":       "#fcfc30",
+        "accent":          "#0b6c93",
+        "decorative":      "#6635f2",
+        "success":         "#14670d",
+        "warning":         "#b74a06",
+        "critical":        "#c80d19",
+        "info":            "#1758b6",
+        "invertedDefault": "#fafafa",
+        "invertedMuted":   "#d4d4d8"
+      },
+      "icon": {
+        "default":         "#18181b",
+        "muted":           "#3f3f46",
+        "disabled":        "#d4d4d8",
+        "primary":         "#3640f5",
+        "secondary":       "#fcfc30",
+        "accent":          "#0b6c93",
+        "decorative":      "#6635f2",
+        "success":         "#14670d",
+        "warning":         "#dd6b02",
+        "critical":        "#c80d19",
+        "info":            "#1758b6",
+        "invertedDefault": "#fafafa",
+        "invertedMuted":   "#d4d4d8"
+      },
+      "border": {
+        "default":    "#9f9fa9",
+        "muted":      "#e4e4e7",
+        "disabled":   "#e4e4e7",
+        "primary":    "#3640f5",
+        "secondary":  "#fcfc30",
+        "accent":     "#0b6c93",
+        "decorative": "#6635f2",
+        "success":    "#14670d",
+        "warning":    "#b74a06",
+        "critical":   "#c80d19",
+        "info":       "#1758b6"
+      },
+      "container": {
+        "neutral": {
+          "base":     { "default": "#fafafa", "hover": "#e4e4e7", "pressed": "#d4d4d8", "disabled": "#fafafa", "selected": "#dde9ff" },
+          "raised":   { "default": "#f4f4f5", "hover": "#e4e4e7", "pressed": "#d4d4d8", "disabled": "#f4f4f5", "selected": "#dde9ff" },
+          "emphasis": { "default": "#18181b", "hover": "#27272a", "pressed": "#3f3f46", "disabled": "#d4d4d8", "selected": "#252cae" }
+        },
+        "primary":   { "default": "#3640f5", "hover": "#2a30d8", "pressed": "#252cae", "disabled": "#e4e4e7", "selected": "#252cae", "soft": "#ecf3ff", "tint": "#dde9ff" },
+        "secondary": { "default": "#fcfc30", "hover": "#f9f016", "pressed": "#e9d709", "disabled": "#e4e4e7", "selected": "#e9d709", "soft": "#fcfee8", "tint": "#fafec3" },
+        "status": {
+          "accent":     { "default": "#144965", "tint": "#cef7ff" },
+          "critical":   { "default": "#c80d19", "tint": "#ffdfe1" },
+          "success":    { "default": "#14670d", "tint": "#d2ffc8" },
+          "warning":    { "default": "#dd6b02", "tint": "#fff1c6" },
+          "info":       { "default": "#194b8f", "tint": "#d9f1ff" },
+          "decorative": { "default": "#6635f2", "tint": "#eae8ff" },
+          "overlay":    { "default": "#09090b", "tint": "#f4f4f5" }
+        }
+      },
+      "button": {
+        "primary":           { "default": "#3640f5", "hover": "#2a30d8", "pressed": "#252cae", "disabled": "#e4e4e7" },
+        "secondary":         { "default": "#fcfc30", "hover": "#f9f016", "pressed": "#e9d709", "disabled": "#e4e4e7" },
+        "tertiary":          { "default": "#ffffff", "hover": "#f4f4f5", "pressed": "#e4e4e7", "disabled": "#fafafa" },
+        "critical":          { "default": "#ed1522", "hover": "#c80d19", "pressed": "#a50f18", "disabled": "#e4e4e7" },
+        "criticalSecondary": { "default": "#fff1f2", "hover": "#ffdfe1", "pressed": "#ffc5c9", "disabled": "#f4f4f5" }
+      },
+      "link": {
+        "default":  "#3640f5",
+        "hover":    "#2a30d8",
+        "pressed":  "#252cae",
+        "disabled": "#d4d4d8"
+      },
+      "menu": {
+        "neutral":   { "default": "#fafafa", "hover": "#f4f4f5", "pressed": "#e4e4e7", "disabled": "#fafafa", "selected": "#dde9ff" },
+        "primary":   { "default": "#3640f5", "hover": "#2a30d8", "pressed": "#252cae", "disabled": "#e4e4e7", "selected": "#161850" },
+        "secondary": { "default": "#fcfc30", "hover": "#f9f016", "pressed": "#e9d709", "disabled": "#e4e4e7", "selected": "#c9a905" }
+      }
+    },
+
+    "dark": {
+      "background": {
+        "default":     "#09090b",
+        "softDefault": "#18181b",
+        "hardDefault": "#27272a",
+        "hardHover":   "#3f3f46"
+      },
+      "text": {
+        "default":         "#fafafa",
+        "muted":           "#d4d4d8",
+        "placeholder":     "#71717b",
+        "disabled":        "#3f3f46",
+        "primary":         "#7591ff",
+        "secondary":       "#fcfc30",
+        "accent":          "#54dcfc",
+        "decorative":      "#9888fd",
+        "success":         "#73fb5b",
+        "warning":         "#ffcb4a",
+        "critical":        "#ff9da3",
+        "info":            "#8ed9ff",
+        "invertedDefault": "#09090b",
+        "invertedMuted":   "#3f3f46"
+      },
+      "icon": {
+        "default":         "#fafafa",
+        "muted":           "#9f9fa9",
+        "disabled":        "#3f3f46",
+        "primary":         "#7591ff",
+        "secondary":       "#fcfc30",
+        "accent":          "#54dcfc",
+        "decorative":      "#9888fd",
+        "success":         "#73fb5b",
+        "warning":         "#ffb31a",
+        "critical":        "#ff9da3",
+        "info":            "#8ed9ff",
+        "invertedDefault": "#18181b",
+        "invertedMuted":   "#3f3f46"
+      },
+      "border": {
+        "default":    "#52525c",
+        "muted":      "#27272a",
+        "disabled":   "#27272a",
+        "primary":    "#7591ff",
+        "secondary":  "#fcfc30",
+        "accent":     "#54dcfc",
+        "decorative": "#9888fd",
+        "success":    "#73fb5b",
+        "warning":    "#ffcb4a",
+        "critical":   "#ff9da3",
+        "info":       "#8ed9ff"
+      },
+      "container": {
+        "neutral": {
+          "base":     { "default": "#18181b", "hover": "#27272a", "pressed": "#3f3f46", "disabled": "#18181b", "selected": "#262e89" },
+          "raised":   { "default": "#27272a", "hover": "#3f3f46", "pressed": "#52525c", "disabled": "#27272a", "selected": "#262e89" },
+          "emphasis": { "default": "#fafafa", "hover": "#f4f4f5", "pressed": "#e4e4e7", "disabled": "#3f3f46", "selected": "#dde9ff" }
+        },
+        "primary":   { "default": "#7591ff", "hover": "#9cb9ff", "pressed": "#c2d6ff", "disabled": "#3f3f46", "selected": "#c2d6ff", "soft": "#161850", "tint": "#262e89" },
+        "secondary": { "default": "#fcfc30", "hover": "#fafe8a", "pressed": "#fafec3", "disabled": "#3f3f46", "selected": "#fafec3", "soft": "#422a06", "tint": "#714e12" },
+        "status": {
+          "accent":     { "default": "#54dcfc", "tint": "#072f45" },
+          "critical":   { "default": "#ff9da3", "tint": "#4b0408" },
+          "success":    { "default": "#73fb5b", "tint": "#033102" },
+          "warning":    { "default": "#ffcb4a", "tint": "#461602" },
+          "info":       { "default": "#8ed9ff", "tint": "#142f57" },
+          "decorative": { "default": "#9888fd", "tint": "#230e67" },
+          "overlay":    { "default": "#fafafa", "tint": "#18181b" }
+        }
+      }
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "textos":  "BancoDoBrasil Textos, system-ui, -apple-system, sans-serif",
+      "titulos": "BancoDoBrasil Titulos, Georgia, serif"
+    },
+    "fontWeight": {
+      "regular": 400,
+      "medium":  500,
+      "bold":    700
+    },
+    "fontSize": {
+      "xs":  "12px",
+      "sm":  "14px",
+      "base":"16px",
+      "lg":  "18px",
+      "xl":  "22px",
+      "2xl": "28px",
+      "3xl": "34px",
+      "4xl": "44px",
+      "5xl": "56px",
+      "6xl": "72px",
+      "7xl": "96px"
+    },
+    "lineHeight": {
+      "none": "1",
+      "tight": "1.15",
+      "snug":  "1.35",
+      "normal":"1.5",
+      "loose": "1.75"
+    },
+    "letterSpacing": {
+      "none":  "0",
+      "tight": "0.15px",
+      "wide":  "0.23px"
+    },
+    "typescale": {
+      "displayLarge":    { "fontFamily": "titulos", "fontWeight": 700, "fontSize": "96px", "lineHeight": "120px", "letterSpacing": "0" },
+      "displaySmall":    { "fontFamily": "titulos", "fontWeight": 700, "fontSize": "44px", "lineHeight": "56px",  "letterSpacing": "0" },
+      "titleXLarge":     { "fontFamily": "titulos", "fontWeight": 700, "fontSize": "34px", "lineHeight": "48px",  "letterSpacing": "0" },
+      "titleLarge":      { "fontFamily": "titulos", "fontWeight": 700, "fontSize": "28px", "lineHeight": "40px",  "letterSpacing": "0" },
+      "titleBase":       { "fontFamily": "titulos", "fontWeight": 700, "fontSize": "22px", "lineHeight": "32px",  "letterSpacing": "0" },
+      "titleSmall":      { "fontFamily": "titulos", "fontWeight": 700, "fontSize": "22px", "lineHeight": "32px",  "letterSpacing": "0" },
+      "labelLarge":      { "fontFamily": "textos",  "fontWeight": 700, "fontSize": "18px", "lineHeight": "24px",  "letterSpacing": "0" },
+      "labelBase":       { "fontFamily": "textos",  "fontWeight": 700, "fontSize": "16px", "lineHeight": "24px",  "letterSpacing": "0.15px" },
+      "labelSmall":      { "fontFamily": "textos",  "fontWeight": 700, "fontSize": "14px", "lineHeight": "16px",  "letterSpacing": "0.15px" },
+      "paragraphXLarge": { "fontFamily": "textos",  "fontWeight": 400, "fontSize": "22px", "lineHeight": "32px",  "letterSpacing": "0" },
+      "paragraphLarge":  { "fontFamily": "textos",  "fontWeight": 400, "fontSize": "18px", "lineHeight": "24px",  "letterSpacing": "0" },
+      "paragraphBase":   { "fontFamily": "textos",  "fontWeight": 400, "fontSize": "16px", "lineHeight": "24px",  "letterSpacing": "0" },
+      "paragraphSmall":  { "fontFamily": "textos",  "fontWeight": 400, "fontSize": "14px", "lineHeight": "20px",  "letterSpacing": "0" },
+      "captionBase":     { "fontFamily": "textos",  "fontWeight": 400, "fontSize": "16px", "lineHeight": "24px",  "letterSpacing": "0.15px" },
+      "captionSmall":    { "fontFamily": "textos",  "fontWeight": 400, "fontSize": "14px", "lineHeight": "16px",  "letterSpacing": "0.23px" }
+    }
+  },
+
+  "spacing": {
+    "none": "0",
+    "2xs":  "4px",
+    "xs":   "8px",
+    "sm":   "16px",
+    "md":   "24px",
+    "lg":   "32px",
+    "xl":   "40px",
+    "2xl":  "48px",
+    "3xl":  "56px",
+    "4xl":  "64px",
+    "5xl":  "80px",
+    "6xl":  "96px",
+    "7xl":  "128px"
+  },
+
+  "borderRadius": {
+    "none": "0",
+    "xs":   "2px",
+    "sm":   "4px",
+    "md":   "8px",
+    "lg":   "16px",
+    "xl":   "24px",
+    "2xl":  "32px",
+    "pill": "999px"
+  },
+
+  "borderWidth": {
+    "none":   "0",
+    "thin":   "0.5px",
+    "medium": "1px",
+    "thick":  "2px"
+  },
+
+  "size": {
+    "16":  "16px",
+    "20":  "20px",
+    "24":  "24px",
+    "32":  "32px",
+    "40":  "40px",
+    "48":  "48px",
+    "64":  "64px",
+    "80":  "80px",
+    "96":  "96px",
+    "128": "128px",
+    "160": "160px"
+  }
+}

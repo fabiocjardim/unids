@@ -1,0 +1,142 @@
+.button {
+  /* Reset */
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: var(--typography-font-family-textos);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: 1;
+  text-decoration: none;
+
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2xs);
+
+  /* Forma */
+  border-radius: var(--border-radius-md);
+
+  /* Transição visual entre estados (sem mexer em props que mudam layout). */
+  transition: background-color 120ms ease, color 120ms ease,
+    box-shadow 120ms ease;
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 0 2px var(--background-default),
+    0 0 0 4px var(--border-primary);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  color: var(--text-disabled);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ============ Tamanhos ============ */
+
+.size-sm {
+  font-size: var(--typography-font-size-sm);
+  padding: var(--spacing-2xs) var(--spacing-sm);
+  min-height: 32px;
+}
+
+.size-md {
+  font-size: var(--typography-font-size-base);
+  padding: var(--spacing-xs) var(--spacing-md);
+  min-height: 40px;
+}
+
+.size-lg {
+  font-size: var(--typography-font-size-lg);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  min-height: 48px;
+}
+
+/* ============ Variantes ============ */
+
+/* Primary — fundo brand-blue, texto invertido (branco) */
+.variant-primary {
+  background-color: var(--button-primary-default);
+  color: var(--text-inverted-default);
+}
+.variant-primary:hover:not(:disabled) {
+  background-color: var(--button-primary-hover);
+}
+.variant-primary:active:not(:disabled) {
+  background-color: var(--button-primary-pressed);
+}
+.variant-primary:disabled {
+  background-color: var(--button-primary-disabled);
+  color: var(--text-disabled);
+}
+
+/* Secondary — fundo brand-yellow, texto padrão (escuro) */
+.variant-secondary {
+  background-color: var(--button-secondary-default);
+  color: var(--text-default);
+}
+.variant-secondary:hover:not(:disabled) {
+  background-color: var(--button-secondary-hover);
+}
+.variant-secondary:active:not(:disabled) {
+  background-color: var(--button-secondary-pressed);
+}
+.variant-secondary:disabled {
+  background-color: var(--button-secondary-disabled);
+  color: var(--text-disabled);
+}
+
+/* Tertiary — fundo claro/branco, texto padrão, com borda sutil */
+.variant-tertiary {
+  background-color: var(--button-tertiary-default);
+  color: var(--text-default);
+  box-shadow: inset 0 0 0 1px var(--border-muted);
+}
+.variant-tertiary:hover:not(:disabled) {
+  background-color: var(--button-tertiary-hover);
+}
+.variant-tertiary:active:not(:disabled) {
+  background-color: var(--button-tertiary-pressed);
+}
+.variant-tertiary:disabled {
+  background-color: var(--button-tertiary-disabled);
+  color: var(--text-disabled);
+  box-shadow: inset 0 0 0 1px var(--border-disabled);
+}
+
+/* Critical — fundo red, texto invertido (branco) */
+.variant-critical {
+  background-color: var(--button-critical-default);
+  color: var(--text-inverted-default);
+}
+.variant-critical:hover:not(:disabled) {
+  background-color: var(--button-critical-hover);
+}
+.variant-critical:active:not(:disabled) {
+  background-color: var(--button-critical-pressed);
+}
+.variant-critical:disabled {
+  background-color: var(--button-critical-disabled);
+  color: var(--text-disabled);
+}
+
+/* Critical secondary — fundo red claro, texto critical (vermelho escuro) */
+.variant-critical-secondary {
+  background-color: var(--button-critical-secondary-default);
+  color: var(--text-critical);
+}
+.variant-critical-secondary:hover:not(:disabled) {
+  background-color: var(--button-critical-secondary-hover);
+}
+.variant-critical-secondary:active:not(:disabled) {
+  background-color: var(--button-critical-secondary-pressed);
+}
+.variant-critical-secondary:disabled {
+  background-color: var(--button-critical-secondary-disabled);
+  color: var(--text-disabled);
+}

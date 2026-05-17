@@ -1,0 +1,16 @@
+{
+  "name": "unids",
+  "private": true,
+  "version": "0.0.0",
+  "description": "uniDS — Design System (tokens + React components + Storybook)",
+  "workspaces": [
+    "design-tokens",
+    "packages/*"
+  ],
+  "scripts": {
+    "tokens": "npm run build --workspace @unids/tokens",
+    "storybook": "npm run storybook --workspace @unids/react",
+    "build-storybook": "npm run tokens && npm run build-storybook --workspace @unids/react",
+    "build": "npm run tokens && npm run build --workspace @unids/react"
+  }
+}

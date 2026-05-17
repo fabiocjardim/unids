@@ -1,0 +1,32 @@
+{
+  "name": "@unids/tokens",
+  "version": "0.0.0",
+  "description": "uniDS design tokens — fonte W3C DTCG + outputs via Style Dictionary.",
+  "type": "module",
+  "main": "./dist/ts/tokens.js",
+  "types": "./dist/ts/tokens.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/ts/tokens.d.ts",
+      "default": "./dist/ts/tokens.js"
+    },
+    "./css/base.css": "./dist/css/base.css",
+    "./css/theme-light.css": "./dist/css/theme-light.css",
+    "./css/theme-dark.css": "./dist/css/theme-dark.css",
+    "./tokens.json": "./design-tokens.json",
+    "./tokens-flat.json": "./tokens-flat.json"
+  },
+  "files": [
+    "dist",
+    "design-tokens.json",
+    "tokens-flat.json"
+  ],
+  "scripts": {
+    "build": "style-dictionary build --config ./style-dictionary.config.js",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.3.0",
+    "rimraf": "^6.0.1"
+  }
+}
