@@ -48,3 +48,5 @@ tmp_*.png
 # Python (gerador de PDF antigo, fora do escopo do DS)
 __pycache__/
 *.pyc
+
+.vercel
